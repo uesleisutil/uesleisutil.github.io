@@ -4,7 +4,7 @@ url: 'http://uesleisutil.github.io'
 baseurl: 'uesleisutil.github.io' #change it according to your repository name
 
 # Profile information
-yourname: Ueslei Adriano Sutil  ## put your name
+yourname: Ueslei dSutil  ## put your name
 title: 'OCEANOGRAPHER'  ## your title
 location: São José dos Campos, SP, Brazil
 
@@ -12,6 +12,5 @@ location: São José dos Campos, SP, Brazil
 ## Social Profiles
 facebook: https://www.facebook.com/uesleisutil  ## your facebook account url
 linkedin: https://www.linkedin.com/in/usutil/  ## your linkedin account url
-
 
 # Update all the sections by editing the files inside _includes folder.
