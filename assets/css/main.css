@@ -374,6 +374,7 @@ h2.resp-accordion:first-child {
     .widget-profil #profile_desc{
         border-top: 0 !important;
         border-bottom: 0 !important;
+        text-align:center;
     }
 
 }
@@ -1000,6 +1001,7 @@ ul.about {
 {
     padding-top: 15px;
     padding-bottom: 15px;
+    text-align:center;
 }
 
 .widget-profil #profile_info
@@ -1106,6 +1108,7 @@ ul.about {
     }
     #profile_desc {
         display:none;
+        text-align:center;
     }
 }
 
@@ -1120,6 +1123,7 @@ ul.about {
     }
     #profile_desc {
         display:none;
+        text-align:center;
     }
 
     .widget-profil h1 {
@@ -1163,6 +1167,7 @@ ul.about {
     }
     #profile_desc {
         border-bottom: 0 !important;
+        text-align:center;
     }
 }
 
