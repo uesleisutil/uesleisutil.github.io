@@ -15,7 +15,7 @@
   url('../fonts/fa-brands-400.woff2') format('woff2'),
   url('../fonts/fa-brands-400.woff') format('woff'),
   url('../fonts/fa-brands-400.ttf') format('truetype'),
-  url('../fonts/fa-brands-400.svg#fontawesome') format('svg');
+  url('../fonts/fa-brands-400.svg#fontawesome') format('svg');fa-researchgate:before{content:"\f4f8"}
 }
 
 .fab {
