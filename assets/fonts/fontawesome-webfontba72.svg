@@ -17,9 +17,10 @@
 <glyph unicode="&#x2000;" horiz-adv-x="768" />
 <glyph unicode="&#x2001;" />
 <glyph unicode="&#x2002;" horiz-adv-x="768" />
-<glyph unicode="&#x2003;" />
+<glyph unicode="&#xf4f8;" horiz-adv-x="768"/>
 <glyph unicode="&#x2004;" horiz-adv-x="512" />
 <glyph unicode="&#x2005;" horiz-adv-x="384" />
+<glyph unicode="&#x2006;" horiz-adv-x="256" />
 <glyph unicode="&#x2006;" horiz-adv-x="256" />
 <glyph unicode="&#x2007;" horiz-adv-x="256" />
 <glyph unicode="&#x2008;" horiz-adv-x="192" />
