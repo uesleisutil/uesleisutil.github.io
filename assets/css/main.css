@@ -2830,12 +2830,12 @@ li h6{
 #print,
 #downlowd {
     display: block;
-    padding: 25px !important;
+    padding: 17px !important;
     margin: 0;
     cursor: pointer;
     float: left;
     text-align: center;
-    box-shadow: 0 0 0 1px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
 
 .icon_print {
