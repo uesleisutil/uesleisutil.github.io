@@ -668,7 +668,7 @@ h2.resp-accordion:hover {
 .portfolio .label-text {
     color:#fff;
     position: relative;
-    z-index:500;
+    z-index:600;
     padding:5px 8px;
     font-weight:300;
 }
