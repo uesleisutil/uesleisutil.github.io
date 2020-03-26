@@ -63,7 +63,7 @@ body {
     background-image: url(../images/bg/bg5.png);
     padding: 0;
 }
-h1, h2, h3, h4, h5, h6, h7, .h1, .h2, .h3, .h4, .h5, .h6, h7 {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
 }
@@ -82,7 +82,6 @@ h1 {
     padding: 0;
     margin: 0;
 }
-
 .resp-tabs-container h1 {
     font-size: 26px;
     color: #999;
@@ -986,14 +985,6 @@ ul.about {
     margin-top: 0px;  
 
 }
-
-.widget-profil  h7 {
-    text-align: center;
-    font-size: 09px;
-    margin-top: 0px;  
-
-}
-
 .widget-profil  h6 {
     text-align: center;
     font-size: 14px;
@@ -1106,10 +1097,6 @@ ul.about {
         font-size: 13px !important;
     }
 
-    .widget-profil h7 {
-        font-size: 09px !important;
-    }
-
     .widget-profil{ 	
         height: 265px !important;
         margin-bottom: 20px;
@@ -1145,10 +1132,6 @@ ul.about {
 
     .widget-profil h4 {
         font-size: 13px !important;
-    }
-
-    .widget-profil h7 {
-        font-size: 09px !important;
     }
 }
 
