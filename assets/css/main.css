@@ -63,7 +63,7 @@ body {
     background-image: url(../images/bg/bg5.png);
     padding: 0;
 }
-h1, h2, h3, h4, h5, h6, h7, .h1, .h2, .h3, .h4, .h5, .h6, .h7 {
+h1, h2, h3, h4, h5, h6, h7, .h1, .h2, .h3, .h4, .h5, .h6, h7 {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
 }
@@ -986,12 +986,6 @@ ul.about {
     margin-top: 0px;  
 
 }
-.widget-profil  h6 {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-
-}
 
 .widget-profil  h7 {
     text-align: center;
@@ -1000,6 +994,12 @@ ul.about {
 
 }
 
+.widget-profil  h6 {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+
+}
 
 .widget-profil  p {
     border-left: 0px;
@@ -1106,6 +1106,10 @@ ul.about {
         font-size: 13px !important;
     }
 
+    .widget-profil h7 {
+        font-size: 09px !important;
+    }
+
     .widget-profil{ 	
         height: 265px !important;
         margin-bottom: 20px;
@@ -1141,6 +1145,10 @@ ul.about {
 
     .widget-profil h4 {
         font-size: 13px !important;
+    }
+
+    .widget-profil h7 {
+        font-size: 09px !important;
     }
 }
 
@@ -1275,10 +1283,6 @@ ul.about {
 
 #resume h5,
 #resume h6 {
-    font-weight:400 !important;
-}
-
-#resume h7 {
     font-weight:400 !important;
 }
 
@@ -2702,9 +2706,6 @@ select {
 li h6{
     font-size: 13px;
 }
-li h7{
-    font-size: 09px;
-}
 .panel{
     border:none !important;	
 }
@@ -2759,15 +2760,6 @@ li h7{
     text-align: center;
     font-size: 15px !important;
 }
-
-#services .service-detail h7 {
-    text-transform: uppercase;
-    font-weight: 400;
-    margin: 10px 0 3px 0;
-    text-align: center;
-    font-size: 09px !important;
-}
-
 #services .service-detail p {
     text-align: center;
     border-left: 0;
