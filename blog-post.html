@@ -18,7 +18,13 @@
 	-->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css">
+	<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
 	
+	<link rel="stylesheet" href="/css/highlight/styles/github-gist.css">
+	<script src="/css/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
 	<!--
 		Load CSS
 	-->
@@ -187,43 +193,99 @@
 								<div class="post-box">
 									
 									<!-- blog detail -->
-									<h1>Procuring Education on Consulted Assurance in Do</h1>						
-									<div class="blog-detail">Posted 15 April 2020</div>
+									<h1>Creating a XY graph using Python from a CSV file</h1>						
+									<div class="blog-detail">Posted 20 April 2020</div>
 									
 									<!-- blog image -->
 									<div class="blog-image">
-										<img src="images/blog/blog1.jpg" alt="" />
+										<img src="images/blog/xy.png" alt="" />
 									</div>  
 									
 									<!-- blog content -->
 									<div class="blog-content">
 										<p>
-											So striking at of to welcomed resolved. Northward by described up household therefore 
-											attention. Excellence decisively nay man yet impression for contrasted remarkably.
+											In order to create a XY graph like in the figure you need the pre-required libraries.
+											<ul class="list-style">
+												<li>pandas</li>
+												<li>numpy</li>
+												<li>matplotlib</li>
+											</ul>
+											
+											First, import the libraries:
+
+											<pre><code class="python">import pandas as pd 
+import numpy as np
+from matplotlib.ticker   import AutoMinorLocator
+import matplotlib.pyplot as plt
+ matplotlib.dates  as mdates
+import matplotlib</code></pre>
 										</p>
 										<p>
-											Forfeited you engrossed but gay sometimes explained. Another as studied it to evident. 
-											Merry sense given he be arise. Conduct at an replied removal an amongst. Remaining 
-											determine few her two cordially admitting old.
+											<pre><code class="python">df_blu = pd.read_csv('blumenau.csv', keep_default_na=True, delimiter=',',header=None,names=['Year','Total', 'DayMax'])
+time_blu = df_blu['Year']
+time_blu = time_blu.values
+max_rain_blu = df_blu['DayMax']
+max_rain_blu = max_rain_blu.values
+total_rain_blu = df_blu['Total']
+total_rain_blu = total_rain_blu.values</code></pre>
 										</p>
-										<blockquote>
-											Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia 
-											Curae; Pellentesque suscipit.
-										</blockquote>
+										<pre><code class="python">df_maj = pd.read_csv('/media/ueslei/Ueslei/Website/blog/major.csv', keep_default_na=True, delimiter=',', header=None,names=['Year','Total', 'DayMax'])
+time_maj = df_maj['Year']
+time_maj = time_maj.values
+max_rain_maj = df_maj['DayMax']
+max_rain_maj = max_rain_maj.values
+total_rain_maj = df_maj['Total']
+total_rain_maj = total_rain_maj.values</code></pre>
 										<p>
-											Tiled say decay spoil now walls meant house. My mr interest thoughts screened of outweigh 
-											removing. Evening society musical besides inhabit ye my. Lose hill well up will he over on. 
-											Increasing sufficient everything men him admiration unpleasing sex.
+											<pre><code class="python">fig, axs = plt.subplots(2, 1)
+fig.subplots_adjust(wspace=0, hspace=0.12)
+
+y_major_ticks  = np.arange(0, 1001, 100)
+y_major_ticks2 = np.arange(0, 1001, 100)
+x_major_ticks  = np.arange(1945, 2011, 5)</code></pre>
 										</p>
-										<ul class="list-style">
-											<li>Greatest properly off ham exercise all.</li>
-											<li>Unsatiable invitation its possession nor off.</li>
-											<li>All difficulty estimating unreserved increasing the solicitude.</li>
-										</ul>
 										<p>
-											Unpleasant astonished an diminution up partiality. Noisy an their of meant. Death means 
-											up civil do an offer wound of.
+											<pre><code class="python">axs[0].plot(time_blu,max_rain_blu,label='November total precipitation (mm)',linestyle='-',marker='.',linewidth=2,color='C0')      
+axs[0].plot(time_blu,total_rain_blu,label='November daily maximum precipitation (mm)',linestyle='-',marker='.',linewidth=2,color='crimson')
+axs[0].legend(loc='upper left',fontsize=8)
+axs[0].yaxis.set_minor_locator(AutoMinorLocator())
+axs[0].tick_params(which='both',  width=2)
+axs[0].tick_params(which='major', length=7)
+axs[0].tick_params(which='minor', length=4)
+axs[0].xaxis.set_visible(False)
+axs[0].set_yticks(y_major_ticks)
+axs[0].set_ylabel('Precipitation [mm]',fontsize=9)
+axs[0].set_title('November precipitation history: Blumenau')
+axs[0].axvline(2008, color='k', linestyle=':', lw=1)
+axs[0].text(2002,980,'1001.2 mm',color='C0')
+axs[0].text(2002,250,'250.9 mm',color='crimson')</code></pre>
 										</p>
+										<p>
+										<pre><code class="python">axs[1].plot(time_maj,max_rain_maj,label='November total precipitation (mm)',linestyle='-',marker='.',linewidth=2,color='C0')      
+axs[1].plot(time_maj,total_rain_maj,label='November daily maximum precipitation (mm)',linestyle='-',marker='.',linewidth=2,color='crimson')
+axs[1].set_xlabel('Years')
+axs[1].set_xticks(x_major_ticks)
+axs[1].legend(loc='upper left',fontsize=8)
+axs[1].xaxis.set_minor_locator(AutoMinorLocator())
+axs[1].yaxis.set_minor_locator(AutoMinorLocator())
+axs[1].tick_params(which='both',  width=2)
+axs[1].tick_params(which='major', length=7)
+axs[1].tick_params(which='minor', length=4)
+axs[1].set_yticks(y_major_ticks)
+axs[1].set_ylabel('Precipitation [mm]',fontsize=9)
+axs[1].set_title('November precipitation history: Major Gercino')
+axs[1].axvline(2008, color='k', linestyle=':', lw=1)
+axs[1].text(2002,860,'860.6.2 mm',color='C0')
+axs[1].text(2002,300,'300.5 mm',color='crimson')</code></pre>
+										  </p>
+										  <p>
+											<pre><code class="python">fig.set_size_inches(13, 7)
+dig.savefig('xy_oi.png',transparent=False, bbox_inches = 'tight', pad_inches=0, dpi=250)</code></pre>
+											  </p>
+	
+
+
+
 									</div>
 
 								</div>
