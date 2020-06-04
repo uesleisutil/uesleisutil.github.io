@@ -33,7 +33,7 @@
 	<!--
 		Code highlightinh
 	-->
-	<link rel="stylesheet" href="./css/highlight/styles/monokai-sublime.css">
+	<link rel="stylesheet" href="./css/highlight/styles/androidstudio.css">
 	<script src="./css/highlight/highlight.pack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 	
@@ -193,8 +193,8 @@
 								<div class="post-box">
 									
 									<!-- blog detail -->
-									<h1>Graph Plotting in Python using matplotlib</h1>						
-									<div class="blog-detail">Posted 04 Jun 2020</div>
+									<h1>Graph Plotting in Python using Matplotlib</h1>						
+									<div class="blog-detail">Posted 05 Jun 2020</div>
 									
 									<!-- blog image -->
 									<div class="blog-image">
@@ -205,7 +205,7 @@
 									<div class="blog-content">
 										<p>
 											Python is one of the most famous programming language for data science and this 
-											article will guide you to create a basic line graph using one of the Python 
+											article will guide you to create a basic line graph using one of the Python's
 											plotting library, <b>Matplotlib</b>. 
 											<br><br>
 
@@ -221,18 +221,28 @@
 											<br><br>
 											
 											So, this article is a beginner-to-intermediate-level walkthrough on Matplotlib coding
-											and requires a previous understanding in programming language, as well other libraries 
-											to plot the graph. 
+											and requires a previous understanding in programming language.
+											<br><br>
+
+											Using the database from the the brazilian <a href="http://www.inmet.gov.br">
+											<b>National Institute of Meteorology</b></a>, I created a comma-separated CSV file with 
+											the long-term data from a weather station located in the city of Blumenau, where 
+											a extreme precipitation event occured in november 2008. This event will be highlighted 
+											in the graph. You can download the file <a href="https://gist.github.com/uesleisutil/2bd4dce332c7be378a374b0bc2d9fba4"><b>here</b></a>.
+											<br><br>
+											
+											The file consists of three collums: the first one is the year, the second is the total
+											total precipitation for november (mm/m²) and the last one is the daily maximum precipitation
+											in november (mm/m²).
 											<br><br>
 
 											First, if you do not have Python installed in your computer, I suggest to download and 
-											install Anaconda,a Python open-source distribution that you can use to perform Python 
-											data science install, libraries and manage emvironments. Download Anaconda 
+											install Anaconda, a Python open-source distribution that you can use to perform Python 
+											data science, install libraries and manage emvironments. Download Anaconda 
 											<b><a href="https://www.anaconda.com/products/individual">here</a></b>.
 											<br><br>
 
 											After Anaconda is installed, you need to install those libraries:
-											
 
 											<ul class="list-style">
 												<li>pandas;</li>
@@ -240,23 +250,21 @@
 												<li>matplotlib.</li>
 											</ul>
 
-											Simply write down in the terminal:
+											Simply write down the following in the terminal:
 
-											<pre><code class="bash">conda install -c anaconda pandas </code></pre>
-											<pre><code class="bash">conda install -c anaconda pandas </code></pre>
-											<pre><code class="bash">conda install -c anaconda matplotlib </code></pre>
+											<pre><code class="shell">$ conda install -c anaconda pandas </code></pre>
+											<pre><code class="shell">$ conda install -c anaconda pandas </code></pre>
+											<pre><code class="shell">$ conda install -c anaconda matplotlib </code></pre>
 											
-											If you want to follow the guide with the data I used as example, you can download 
-											the CSV file here.  
-											
-											First, import the libraries:
+											Now, import the libraries:
 
 											<pre><code class="python">import pandas as pd 
 import numpy as np
-from matplotlib.ticker   import AutoMinorLocator
 import matplotlib.pyplot as plt
- matplotlib.dates  as mdates
-import matplotlib</code></pre>
+import matplotlib.dates as mdates
+import matplotlib
+from matplotlib.ticker import AutoMinorLocator
+</code></pre>
 										</p>
 										<p>
 											<pre><code class="python">df_blu = pd.read_csv('blumenau.csv', keep_default_na=True, delimiter=',',header=None,names=['Year','Total', 'DayMax'])
