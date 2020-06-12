@@ -271,9 +271,10 @@ from matplotlib.ticker import AutoMinorLocator</code></pre>
 										<p>
 										<pre><code class="language-python">
 											file_name = pd.read_csv('blumenau.csv', 
-														keep_default_na=True,delimiter=',', 
-														header=None,
-														names=['Year','Total', 'DayMax'])</code></pre>
+																	keep_default_na=True,
+																	delimiter=',', 
+																	header=None,
+																	names=['Year','Total', 'DayMax'])</code></pre>
 										</p>
 
 										<p>
@@ -323,8 +324,8 @@ y_major_ticks = np.arange(0, 1001, 200)
 										<p>
 										<pre><code class="language-python">
 										axs.plot(year, max_rain,label='Total precipitation', 
-												linestyle='-', marker='.', linewidth=2, 
-												color='C0')      
+												 linestyle='-', marker='.', linewidth=2, 
+												 color='C0')      
 										</pre></code></p>
 
 										<p> For the second line, put the <b>year</b> variable as the first parameter and 
@@ -335,9 +336,9 @@ y_major_ticks = np.arange(0, 1001, 200)
 										<p>
 										<pre><code class="language-python">
 											axs.plot(year, total_rain, 
-													label='Daily maximum precipitation', 
-													linestyle='-', marker='.', 
-													linewidth=2, color='crimson')     
+													 label='Daily maximum precipitation', 
+													 linestyle='-', marker='.', 
+													 linewidth=2, color='crimson')     
 										</pre></code></p>
 
 										<p> Set the legend size and location.
