@@ -152,7 +152,7 @@
 					<!-- profile buttons -->
 					<div class="lnks">
 						<a href="files/Ueslei_15APR2020.pdf" class="lnk" download>
-							<span class="text">Download my full CV</span>
+							<span class="text">Download CV</span>
 							<span class="ion ion-archive"></span>
 						</a>
 						<a href="index.html" class="lnk discover active">
@@ -220,7 +220,7 @@
 											Using the database from the the brazilian <a href="http://www.inmet.gov.br">
 											<b>National Institute of Meteorology</b></a>, I created a comma-separated CSV file
 											from a weather station located in the city of Blumenau, where 
-											a extreme precipitation event occured in november 2008.
+											an extreme precipitation event occured in november 2008.
 											You can download the file <a href="https://gist.github.com/uesleisutil/2bd4dce332c7be378a374b0bc2d9fba4"><b>here</b></a>.
 										</p>
 										<p>
@@ -230,7 +230,7 @@
 										<p>
 											First, if you do not have Python installed in your computer, I suggest to download and 
 											install Anaconda, a Python open-source distribution that you can use to perform Python 
-											data science, install libraries and manage emvironments. Download Anaconda 
+											data science, install libraries and manage environments. Download Anaconda 
 											<b><a href="https://www.anaconda.com/products/individual">here</a></b>.
 										</p>
 										<p>
@@ -317,8 +317,8 @@ y_major_ticks = np.arange(0, 1001, 200)
 										</p>
 
 										<p> For the first line, put the <b>year</b> variable as the first parameter and 
-											the <b>max_rain</b> as second. The <b>linestyle is solid</b>, with a dot <b>marker</b>
-											in each data. Also, the <b>linewidth</b> is set as 2, and the color is defined as
+											the <b>max_rain</b> as second. Set the <b>linestyle</b> as solid, with a dot <b>marker</b>
+											in each data. Also, set the <b>linewidth</b> as 2 and the color as
 											<b>C0</b> (Blue).
 										</p> 
 										<p>
@@ -329,9 +329,9 @@ y_major_ticks = np.arange(0, 1001, 200)
 										</pre></code></p>
 
 										<p> For the second line, put the <b>year</b> variable as the first parameter and 
-											the <b>total_rain</b> as second. The <b>linestyle is solid</b>, with a dot <b>marker</b>
-											in each data. Also, the <b>linewidth</b> is set as 2, and the color is defined as
-											<b>crimson</b> (Red).
+											the <b>total_rain</b> as second. Again, set the <b>linestyle</b> as solid, with 
+											a dot <b>marker</b> in each data. Also, set the <b>linewidth</b> as 2, and the
+											 color as <b>crimson</b> (Red).
 										</p> 
 										<p>
 										<pre><code class="language-python">
@@ -347,8 +347,7 @@ y_major_ticks = np.arange(0, 1001, 200)
 										<pre><code class="language-python">axs.legend(loc='upper left',fontsize=8)     
 										</pre></code></p>
 
-										<p> Use the <b>set_minor_locator</b>, <b>tick_params</b> and 
-											to create nice axis ticks.
+										<p> Use the <b>set_minor_locator</b> and <b>tick_params</b> to create nice axis ticks.
 										</p> 
 										<p>
 										<pre><code class="language-python">axs.yaxis.set_minor_locator(AutoMinorLocator())
@@ -357,7 +356,7 @@ axs.tick_params(which='major', length=7)
 axs.tick_params(which='minor', length=4)
 										</pre></code></p>										
 
-										<p> Import the ticks created earlier with <b>Numpy</b> into the plot.
+										<p> Import the ticks created earlier with <b>Numpy</b>.
 										</p> 
 										<p>
 										<pre><code class="language-python">axs.set_xticks(x_major_ticks)
@@ -377,7 +376,7 @@ axs.set_xlabel('Year',fontsize=9)
 										<pre><code class="language-python">axs.set_title('November precipitation history')
 										</pre></code></p>										
 
-										<p> You can also highlight a specific part of the graph. In our case, 2008 was a extreme rainy
+										<p> You can also highlight a specific part of the graph. In our case, 2008 was an extreme rainy
 											year, so we gonna add a reference line in this year and write the amount of precipitation 
 											for both red and blue lines. 
 										</p> 
@@ -399,7 +398,7 @@ fig.savefig('xy_graph_csv.png',transparent=False,
 										</pre></code></p>											
 
 										<p> Here is our figure. Note that there is gaps in both lines. 
-											This is caused because we have NaNs in your data.
+											This is caused from the NaNs in our data.
 										</p>
 										
 										<p><img src="images/blog/xy_graph_csv.png" width="100%" /></p>
