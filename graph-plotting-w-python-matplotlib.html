@@ -297,37 +297,104 @@ max_rain = max_rain.values
 										</code></pre>
 										</p>
 										<p>
-											
-
+											Create the figure plot to draw the graph.
 										</p>
 										<p>
-											<pre><code class="language-python">fig, axs = plt.subplots(2, 1)
-fig.subplots_adjust(wspace=0, hspace=0.12)
-
-y_major_ticks  = np.arange(0, 1001, 100)
-y_major_ticks2 = np.arange(0, 1001, 100)
-x_major_ticks  = np.arange(1945, 2011, 5)</code></pre>
+											<pre><code class="language-python">fig, axs = plt.subplots(1, 1)</code></pre>
 										</p>
+
+										<p>Set the X and Y axis ticks according to the CSV file.</p>
 								
 										<p>
-											<pre><code class="language-python">axs[0].plot(time_blu,max_rain_blu,label='November total precipitation (mm)',linestyle='-',marker='.',linewidth=2,color='C0')      
-axs[0].plot(time_blu,total_rain_blu,label='November daily maximum precipitation (mm)',linestyle='-',marker='.',linewidth=2,color='crimson')
-axs[0].legend(loc='upper left',fontsize=8)
-axs[0].yaxis.set_minor_locator(AutoMinorLocator())
-axs[0].tick_params(which='both',  width=2)
-axs[0].tick_params(which='major', length=7)
-axs[0].tick_params(which='minor', length=4)
-axs[0].xaxis.set_visible(False)
-axs[0].set_yticks(y_major_ticks)
-axs[0].set_ylabel('Precipitation [mm]',fontsize=9)
-axs[0].set_title('November precipitation history: Blumenau')
-axs[0].axvline(2008, color='k', linestyle=':', lw=1)
-axs[0].text(2002,980,'1001.2 mm',color='C0')
-axs[0].text(2002,250,'250.9 mm',color='crimson')</code></pre>
+											<pre><code class="language-python">x_major_ticks = np.arange(1945, 2011, 5)
+y_major_ticks = np.arange(0, 1001, 200)
+
+											</code></pre>
 										</p>
-										  <p>
-											<pre><code class="python">fig.set_size_inches(13, 7)
-dig.savefig('xy_oi.png',transparent=False, bbox_inches = 'tight', pad_inches=0, dpi=250)</code></pre>
+
+										<p> For the first line, put the <b>year</b> variable as the first parameter and 
+											the <b>max_rain</b> as second. The <b>linestyle is solid</b>, with a dot <b>marker</b>
+											in each data. Also, the <b>linewidth</b> is set as 2, and the color is defined as
+											<b>C0</b> (Blue).
+										</p> 
+										<p>
+										<pre><code class="language-python">
+										axs.plot(year, max_rain, label='Total precipitation', linestyle='-', marker='.', linewidth=2, color='C0')      
+										</pre></code></p>
+
+										<p> For the second line, put the <b>year</b> variable as the first parameter and 
+											the <b>total_rain</b> as second. The <b>linestyle is solid</b>, with a dot <b>marker</b>
+											in each data. Also, the <b>linewidth</b> is set as 2, and the color is defined as
+											<b>crimson</b> (Red).
+										</p> 
+										<p>
+										<pre><code class="language-python">axs.plot(year, total_rain, label='Daily maximum precipitation', linestyle='-', marker='.', linewidth=2, color='crimson')     
+										</pre></code></p>
+
+
+										
+
+										<p>The complete script is:</p>
+
+										<p>
+										<pre><code class="language-python">
+"""
+Author:         Ueslei Adriano Sutil
+Created:        12 June 2020
+"""
+
+# Import libraries.
+import pandas as pd
+import numpy as np
+from matplotlib.ticker import AutoMinorLocator
+import matplotlib.pyplot as plt
+
+# Open CSV file and import variables.
+file_name = pd.read_csv('blumenau.csv', keep_default_na=True,delimiter=',', header=None,names=['Year','Total', 'DayMax'])
+
+# Import CSV data.
+year = file_name['Year']
+year = year.values
+total_rain = file_name['Total']
+total_rain = total_rain.values
+max_rain = file_name['DayMax']
+max_rain = max_rain.values
+
+# Create figures plots.
+fig, axs = plt.subplots(1, 1)
+
+# Set X and Y ticks.
+x_major_ticks  = np.arange(1945, 2011, 5)
+y_major_ticks  = np.arange(0, 1001, 200)
+
+# Plot the lines.
+axs.plot(year,max_rain,label='Total precipitation',linestyle='-',marker='.',linewidth=2,color='C0')      
+axs.plot(year,total_rain,label='Daily maximum precipitation',linestyle='-',marker='.',linewidth=2,color='crimson')
+
+# Insert legends.
+axs.legend(loc='upper left',fontsize=8)
+
+# Nice axis ticks.
+axs.yaxis.set_minor_locator(AutoMinorLocator())
+axs.tick_params(which='both',  width=2)
+axs.tick_params(which='major', length=7)
+axs.tick_params(which='minor', length=4)
+axs.set_xticks(x_major_ticks)
+axs.set_yticks(y_major_ticks)
+
+# Set axis labels.
+axs.set_ylabel('Precipitation [mm]',fontsize=9)
+axs.set_xlabel('Year',fontsize=9)
+
+axs.set_title('November precipitation history for Blumenau')
+axs.axvline(2008, color='k', linestyle=':', lw=1)
+axs.text(2002,980,'1001.2 mm',color='C0')
+axs.text(2002,250,'250.9 mm',color='crimson')
+
+# Save figure.
+fig.set_size_inches(11, 3)
+fig.savefig('xy_graph_csv.png',transparent=False, bbox_inches = 'tight', pad_inches=0, dpi=250)
+												  </code></pre>
 											  </p>
 
 											  <div class="fb-like" data-href="https://uesleisutil.com.br/graph-plotting-w-python-matplotlib.html" data-width="350" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
