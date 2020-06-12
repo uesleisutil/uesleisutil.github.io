@@ -7,7 +7,7 @@
 	-->
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-	<title>Graph Plotting in Python using Matplotlib</title>
+	<title>Graph plotting in Python using Matplotlib</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<meta name="description" content="How to create a concise graph using matplotlib.." />
 	
@@ -27,14 +27,8 @@
 	<link rel="stylesheet" href="css/magnific-popup.css" />
 	<link rel="stylesheet" href="css/animate.css" />
 	<link rel="stylesheet" href="css/owl.carousel.css" />
-	
-	<!--
-		Code highlightinh
-	-->
-	<link rel="stylesheet" href="./css/highlight/styles/androidstudio.css">
-	<script src="./css/highlight/highlight.pack.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
-	
+
+	<link rel="stylesheet" href="css/prism.css"/>
 	<!--
 		Template New-Skin
 	-->
@@ -191,7 +185,7 @@
 								<div class="post-box">
 									
 									<!-- blog detail -->
-									<h1>Graph Plotting in Python using Matplotlib</h1>						
+									<h1>Graph plotting in Python using Matplotlib</h1>						
 									<div class="blog-detail">Posted 05 Jun 2020</div>
 									
 									<!-- blog image -->
@@ -200,80 +194,98 @@
 									</div>  
 									
 									<!-- blog content -->
-									<div class="blog-content">
+									<div class="blog-content", align="justify">
 										<p>
-											Python is one of the most famous programming language for data science and this 
-											article will guide you to create a basic line graph using one of the Python's
-											plotting library, <b>Matplotlib</b>. 
-											<br><br>
-
+											Without a doubt, Python is one of the most famous programming language for data science, 
+											but creating a script from scratch for data visualization can be tricky.
+											In this article I will guide you to create a simple line graph. 
+										</p>
+										<p>
 											Although nowadays there is plenty of options for data visualization in Python, 
 											such as <b>Seaborn</b>, <b>Plotly</b> and <b>Bokeh</b>, in this article I will 
 											write about the oldest and most famous Python's data visualization library,
 											<b>Matplotlib</b>. 
-											<br><br>
-											
+										</p>
+										<p>
 											<b>Matplotlib</b> is a library used for creating static, animated, and interactive 
-											visualizations in Python, but despite being widely used for being a complete
-											library, getting a plot to look right can be pretty time consuming. 
-											<br><br>
+											visualizations, but despite being widely used, getting a plot to look right can
+											be pretty time consuming. 
+										</p>
+										<p>
 											
 											So, this article is a beginner-to-intermediate-level walkthrough on Matplotlib coding
 											and requires a previous understanding in programming language.
-											<br><br>
-
-											Using the database from the the brazilian <a href="http://www.inmet.gov.br">
-											<b>National Institute of Meteorology</b></a>, I created a comma-separated CSV file with 
-											the long-term data from a weather station located in the city of Blumenau, where 
-											a extreme precipitation event occured in november 2008. This event will be highlighted 
-											in the graph. You can download the file <a href="https://gist.github.com/uesleisutil/2bd4dce332c7be378a374b0bc2d9fba4"><b>here</b></a>.
-											<br><br>
-											
+										</p>
+										<p>
+											Using database from the the brazilian <a href="http://www.inmet.gov.br">
+											<b>National Institute of Meteorology</b></a>, I created a comma-separated CSV file
+											from a weather station located in the city of Blumenau, where 
+											a extreme precipitation event occured in november 2008.
+											You can download the file <a href="https://gist.github.com/uesleisutil/2bd4dce332c7be378a374b0bc2d9fba4"><b>here</b></a>.
+										</p>
+										<p>
 											The file consists of three collums: the first one is the year, the second is the total
-											total precipitation for november (mm/m²) and the last one is the daily maximum precipitation
-											in november (mm/m²).
-											<br><br>
-
+											precipitation for november (mm) and the last one is the daily maximum precipitation
+											in november (mm).
+										</p>
+										<p>
 											First, if you do not have Python installed in your computer, I suggest to download and 
 											install Anaconda, a Python open-source distribution that you can use to perform Python 
 											data science, install libraries and manage emvironments. Download Anaconda 
 											<b><a href="https://www.anaconda.com/products/individual">here</a></b>.
-											<br><br>
-
-											After Anaconda is installed, you need to install those libraries:
-
+										</p>
+										<p>
+											After Anaconda is installed, install those libraries:
+										</p>
+										<p>
 											<ul class="list-style">
-												<li>pandas;</li>
-												<li>numpy;</li>
-												<li>matplotlib.</li>
+												<li>Pandas;</li>
+												<li>Numpy;</li>
+												<li>Matplotlib.</li>
 											</ul>
-
+										</p>
+										<p>
 											Simply write down the following in the terminal:
-
-											<pre><code class="shell">$ conda install -c anaconda pandas </code></pre>
-											<pre><code class="shell">$ conda install -c anaconda pandas </code></pre>
-											<pre><code class="shell">$ conda install -c anaconda matplotlib </code></pre>
-											
-											Now, import the libraries:
-
-											<pre><code class="python">import pandas as pd 
+										</p>
+										<p>
+											<pre><code class="language-bash line-numbers">$ conda install -c anaconda pandas</code></pre>
+											<pre><code class="language-shell line-numbers">$ conda install -c anaconda pandas </code></pre>
+											<pre><code class="language-shell line-numbers">$ conda install -c anaconda matplotlib </code></pre>
+										</p>
+										<p>
+											Open a new file and write the following to import the Python libraries:
+										</p>
+										<p>
+											<pre class="language-python line-numbers"><code>import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib
-from matplotlib.ticker import AutoMinorLocator
-</code></pre>
+from matplotlib.ticker import AutoMinorLocator</code></pre>
 										</p>
+
 										<p>
-											<pre><code class="python">df_blu = pd.read_csv('blumenau.csv', keep_default_na=True, delimiter=',',header=None,names=['Year','Total', 'DayMax'])
-time_blu = df_blu['Year']
-time_blu = time_blu.values
-max_rain_blu = df_blu['DayMax']
-max_rain_blu = max_rain_blu.values
-total_rain_blu = df_blu['Total']
-total_rain_blu = total_rain_blu.values
-</code></pre>
+											We imported Pandas to easily handle with the CSV file. The <b>read_csv</b> function is used
+											to read the <b>blumenau.csv</b> file. The parameters of this funcion are: <b>keep_default_na</b>,
+											to not erase the NaNs (Not a Number), the values <b>delimiter</b>s are commas, <b>header</b>
+											is None and the <b>names</b> of each collumn are Year, Total and DayMax.
+											
 										</p>
+
+
+										<p>
+										<pre><code class="shell", font-size=2%>file = pd.read_csv('blumenau.csv', keep_default_na=True, delimiter=',', header=None,names=['Year','Total', 'DayMax'])</code></pre>
+										</p>
+
+										<p>
+											<pre><code class="language-python">time_blu = file['Year']
+time_blu = time_blu.values
+max_rain_blu = file['DayMax']
+max_rain_blu = max_rain_blu.values
+total_rain_blu = file['Total']
+total_rain_blu = total_rain_blu.values</code></pre>
+											</p>
+
 										<pre><code class="python">df_maj = pd.read_csv('/media/ueslei/Ueslei/Website/blog/major.csv', keep_default_na=True, delimiter=',', header=None,names=['Year','Total', 'DayMax'])
 time_maj = df_maj['Year']
 time_maj = time_maj.values
@@ -282,7 +294,7 @@ max_rain_maj = max_rain_maj.values
 total_rain_maj = df_maj['Total']
 total_rain_maj = total_rain_maj.values</code></pre>
 										<p>
-											<pre><code class="python">fig, axs = plt.subplots(2, 1)
+											<pre><code class="language-python">fig, axs = plt.subplots(2, 1)
 fig.subplots_adjust(wspace=0, hspace=0.12)
 
 y_major_ticks  = np.arange(0, 1001, 100)
@@ -357,6 +369,8 @@ dig.savefig('xy_oi.png',transparent=False, bbox_inches = 'tight', pad_inches=0, 
 	<script src="js/isotope.pkgd.js"></script>
 	<script src="js/jquery.slimscroll.js"></script>
 	<script src="js/owl.carousel.js"></script>
+	<script defer src="js/prism.js"></script>
+	<pre data-src="https://code.jquery.com/jquery-2.1.0.min.js"></pre>
 	
 	<!--
 		Google map api
