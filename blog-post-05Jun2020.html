@@ -224,9 +224,8 @@
 											You can download the file <a href="https://gist.github.com/uesleisutil/2bd4dce332c7be378a374b0bc2d9fba4"><b>here</b></a>.
 										</p>
 										<p>
-											The file consists of three collums: the first one is the year, the second is the total
-											precipitation for november (mm) and the last one is the daily maximum precipitation
-											in november (mm).
+											The file consists of three collums: the first one is the year, the second is the total precipitation 
+											for november and the last one is the daily maximum precipitation in november. 
 										</p>
 										<p>
 											First, if you do not have Python installed in your computer, I suggest to download and 
@@ -245,54 +244,62 @@
 											</ul>
 										</p>
 										<p>
-											Simply write down the following in the terminal:
+											Simply write down, in the terminal, the following:
 										</p>
 										<p>
-											<pre><code class="language-bash line-numbers">$ conda install -c anaconda pandas</code></pre>
-											<pre><code class="language-shell line-numbers">$ conda install -c anaconda pandas </code></pre>
-											<pre><code class="language-shell line-numbers">$ conda install -c anaconda matplotlib </code></pre>
+											<pre><code class="language-bash">$ conda install -c anaconda pandas</code></pre>
+											<pre><code class="language-shell">$ conda install -c anaconda pandas </code></pre>
+											<pre><code class="language-shell">$ conda install -c anaconda matplotlib </code></pre>
 										</p>
 										<p>
-											Open a new file and write the following to import the Python libraries:
+											Write the following to import the Python libraries:
 										</p>
 										<p>
-											<pre class="language-python line-numbers"><code>import pandas as pd 
+											<pre class="language-python"><code>import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib
 from matplotlib.ticker import AutoMinorLocator</code></pre>
 										</p>
-
 										<p>
 											We imported Pandas to easily handle with the CSV file. The <b>read_csv</b> function is used
-											to read the <b>blumenau.csv</b> file. The parameters of this funcion are: <b>keep_default_na</b>,
-											to not erase the NaNs (Not a Number), the values <b>delimiter</b>s are commas, <b>header</b>
-											is None and the <b>names</b> of each collumn are Year, Total and DayMax.
-											
+											to read the <b>blumenau.csv</b> file. Also, we use: <b>keep_default_na</b> 
+											to not erase the NaNs (Not a Number data), comma as <b>delimiter</b>, <b>header</b> parameter
+											as None and the <b>names</b> of each collumn as Year, Total and DayMax.
 										</p>
-
-
 										<p>
-										<pre><code class="shell", font-size=2%>file = pd.read_csv('blumenau.csv', keep_default_na=True, delimiter=',', header=None,names=['Year','Total', 'DayMax'])</code></pre>
+										<pre><code class="language-python">
+											file_name = pd.read_csv('blumenau.csv', keep_default_na=True,delimiter=',', header=None,names=['Year','Total', 'DayMax'])</code></pre>
 										</p>
 
 										<p>
-											<pre><code class="language-python">time_blu = file['Year']
-time_blu = time_blu.values
-max_rain_blu = file['DayMax']
-max_rain_blu = max_rain_blu.values
-total_rain_blu = file['Total']
-total_rain_blu = total_rain_blu.values</code></pre>
-											</p>
+											Store the Year collumn from <b>file_name</b> inside the <b> year</b> variable.
+										</p>
+										<p>
+											<pre><code class="language-python">year = file_name['Year']
+year = time_blu.values
+										</code></pre>
+										</p>
+										<p>
+											Store the total precipitation collumn (Total) from <b>file_name</b> inside the <b> total_rain</b> variable.
+										</p>
+										<p>
+										<pre><code class="language-python">total_rain = file_name['Total']
+total_rain = total_rain_blu.values</code></pre>
+										</p>
+										<p>
+											Store the november maximum daily precipitation (DayMax) collumn from <b>file_name</b> inside the <b> max_rain</b> variable.
+										</p>										
+										<p>
+										<pre><code class="language-python">max_rain = file_name['DayMax']
+max_rain = max_rain.values
+										</code></pre>
+										</p>
 
-										<pre><code class="python">df_maj = pd.read_csv('/media/ueslei/Ueslei/Website/blog/major.csv', keep_default_na=True, delimiter=',', header=None,names=['Year','Total', 'DayMax'])
-time_maj = df_maj['Year']
-time_maj = time_maj.values
-max_rain_maj = df_maj['DayMax']
-max_rain_maj = max_rain_maj.values
-total_rain_maj = df_maj['Total']
-total_rain_maj = total_rain_maj.values</code></pre>
+
+
+										</p>
 										<p>
 											<pre><code class="language-python">fig, axs = plt.subplots(2, 1)
 fig.subplots_adjust(wspace=0, hspace=0.12)
@@ -301,6 +308,10 @@ y_major_ticks  = np.arange(0, 1001, 100)
 y_major_ticks2 = np.arange(0, 1001, 100)
 x_major_ticks  = np.arange(1945, 2011, 5)</code></pre>
 										</p>
+
+
+
+										
 										<p>
 											<pre><code class="python">axs[0].plot(time_blu,max_rain_blu,label='November total precipitation (mm)',linestyle='-',marker='.',linewidth=2,color='C0')      
 axs[0].plot(time_blu,total_rain_blu,label='November daily maximum precipitation (mm)',linestyle='-',marker='.',linewidth=2,color='crimson')
@@ -369,9 +380,19 @@ dig.savefig('xy_oi.png',transparent=False, bbox_inches = 'tight', pad_inches=0, 
 	<script src="js/isotope.pkgd.js"></script>
 	<script src="js/jquery.slimscroll.js"></script>
 	<script src="js/owl.carousel.js"></script>
-	<script defer src="js/prism.js"></script>
+	<script src="js/prism.js"></script>
+	<script src="js/prism-normalize-whitespace.js"></script>
 	<pre data-src="https://code.jquery.com/jquery-2.1.0.min.js"></pre>
 	
+	<script type="text/javascript">
+		// Optional
+		Prism.plugins.NormalizeWhitespace.setDefaults({
+			'remove-trailing': true,
+			'remove-indent': true,
+			'left-trim': true,
+			'right-trim': true,
+		});
+		</script>
 	<!--
 		Google map api
 	-->

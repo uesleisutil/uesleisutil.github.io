@@ -126,7 +126,7 @@ pre[class*="language-"] {
 
 pre[data-line] {
 	position: relative;
-	padding: 1em 0 1em 3em;
+	padding: 1em 0 1em 1em;
 }
 
 .line-highlight {
@@ -186,7 +186,7 @@ pre[id].linkable-line-numbers span.line-numbers-rows > span:hover:before {
 
 pre[class*="language-"].line-numbers {
 	position: relative;
-	padding-left: 3.8em;
+	padding-left: 2.8em;
 	counter-reset: linenumber;
 }
 
@@ -289,5 +289,3 @@ div.code-toolbar > .toolbar span:focus {
 	color: inherit;
 	text-decoration: none;
 }
-
-
