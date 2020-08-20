@@ -17,46 +17,46 @@
 
 .preloader .spinner .double-bounce1,
 .preloader .spinner .double-bounce2 {
-	background: #e24340;
+	background: #e8676b;
 }
 
 .lnk:hover,
 .button:hover {
-	color: #e24340;
+	color: #e8676b;
 }
 
 .lnk:hover .ion,
 .button:hover .ion {
-	color: #e24340;
+	color: #e8676b;
 }
 
 .lnk:hover .arrow:before,
 .button:hover .arrow:before,
 .lnk:hover .arrow:after,
 .button:hover .arrow:after {
-	background: #e24340;
+	background: #e8676b;
 }
 
 input:focus,
 textarea:focus,
 button:focus {
-	border-bottom: 1px solid #e24340;
+	border-bottom: 1px solid #e8676b;
 }
 
 button:hover {
-	border-bottom: 1px solid #e24340;
+	border-bottom: 1px solid #e8676b;
 }
 
 .header .top-menu ul li:hover a,
 .header .top-menu ul li.active a {
-	color: #e24340;
+	color: #e8676b;
 }
 
 .header .top-menu ul li:hover a .icon,
 .header .top-menu ul li.active a .icon,
 .header .top-menu ul li:hover a .link,
 .header .top-menu ul li.active a .link {
-	color: #e24340;
+	color: #e8676b;
 }
 
 .card-started:after {
@@ -72,13 +72,13 @@ button:hover {
 }
 
 .card-started .profile .subtitle {
-	color: #e24340;
+	color: #e8676b;
 }
 
 .card-started .profile .social a:hover .ion,
 .card-started .profile .social a:hover .fab,
 .card-started .profile .social a:hover .fas {
-	color: #e24340;
+	color: #e8676b;
 }
 
 .content .title:before {
@@ -88,14 +88,14 @@ button:hover {
 }
 
 .service-items .service-item .icon {
-	color: #e24340;
+	color: #e8676b;
 	background: -moz-linear-gradient(-45deg, rgba(232, 103, 107, 0.4) 0%, rgba(232, 103, 107, 0.01) 100%);
 	background: -webkit-linear-gradient(-45deg, rgba(232, 103, 107, 0.4) 0%, rgba(232, 103, 107, 0.01) 100%);
 	background: linear-gradient(135deg, rgba(232, 103, 107, 0.4) 0%, rgba(232, 103, 107, 0.01) 100%);
 }
 
 .pricing-items .pricing-item .icon {
-	color: #e24340;
+	color: #e8676b;
 }
 
 .pricing-items .pricing-item .feature-list ul li strong {
@@ -103,28 +103,28 @@ button:hover {
 }
 
 .fuct-items .fuct-item .icon {
-	color: #e24340;
+	color: #e8676b;
 }
 
 .resume-title .icon,
 .skill-title .icon {
-	color: #e24340;
+	color: #e8676b;
 }
 
 .resume-items .resume-item.active .date {
-	color: #e24340;
+	color: #e8676b;
 }
 
 .resume-items .resume-item.active .date:before {
-	background: #e24340;
+	background: #e8676b;
 }
 
 .skills-list ul li .progress .percentage {
-	background: #e24340;
+	background: #e8676b;
 }
 
 .content.works .filter-menu .f_btn.active {
-	color: #e24340;
+	color: #e8676b;
 }
 
 .box-item .image .info:before {
@@ -134,21 +134,21 @@ button:hover {
 }
 
 .post-box .blog-content blockquote {
-	border-left: 2px solid #e24340;
+	border-left: 2px solid #e8676b;
 }
 
 .post-box .blog-content ul.list-style li:before {
-	background: #e24340;
+	background: #e8676b;
 }
 
 .post-box .post-comments li .comment-info .name h6 {
-	color: #e24340;
+	color: #e8676b;
 }
 
 .background.gradient {
 	background: #50a3a2;
-	background: -webkit-linear-gradient(top left, #c33764 0%, #e24340 100%);
-	background: linear-gradient(to bottom right, #c33764 0%, #e24340 100%);
+	background: -webkit-linear-gradient(top left, #c33764 0%, #e8676b 100%);
+	background: linear-gradient(to bottom right, #c33764 0%, #e8676b 100%);
 }
 
 /*
@@ -156,11 +156,11 @@ button:hover {
 */
 
 .skills-list.list ul li .name:before {
-  color: #e24340;
+  color: #e8676b;
 }
 
 .skills-list.dotted ul li .progress .da span {
-  background: #e24340!important;
+  background: #e8676b!important;
 }
 
 .skills-list.circles .progress .bar, 
@@ -214,48 +214,48 @@ button:hover {
 .skills-list.circles .progress.p98 .fill, 
 .skills-list.circles .progress.p99 .fill, 
 .skills-list.circles .progress.p100 .fill {
-  border: 0.09em solid #e24340;
+  border: 0.09em solid #e8676b;
 }
 
 input:focus,
 textarea:focus {
-  border-color: #e24340;
+  border-color: #e8676b;
 }
 
 .card-started .profile .subtitle, 
 .card-started .profile .typed-cursor {
-  color: #e24340;
+  color: #e8676b;
 }
 
 .content .title .first-word {
-  color: #e24340;
+  color: #e8676b;
 }
 
 .content .title::first-letter,
 .content .title .first-letter::first-letter {
-  color: #e24340;
+  color: #e8676b;
 }
 
 .new-skin .service-items .service-item .icon {
-  background: #e24340!important;
+  background: #e8676b!important;
 }
 
 .resume-items .resume-item.active .date {
-  border-color: #e24340;
+  border-color: #e8676b;
 }
 
 .box-item:hover .desc .name {
-  color: #e24340;
+  color: #e8676b;
 }
 
 .new-skin .info-list ul li strong {
-  background: #e24340;
+  background: #e8676b;
 }
 
 .revs-carousel .owl-dots .owl-dot {
-  border-color: #e24340;
+  border-color: #e8676b;
 }
 
 .revs-carousel .owl-dot.active {
-  background: #e24340;
+  background: #e8676b;
 }

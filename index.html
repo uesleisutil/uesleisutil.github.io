@@ -7,13 +7,14 @@
 	-->
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 	<title>Ueslei Adriano Sutil</title>
 	
 	<!--
 		Load Fonts
 	-->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css">
 	
 	<!--
 		Load CSS
@@ -29,7 +30,7 @@
 	<!--
 		Background Gradient
 	-->
-	<<link rel="stylesheet" href="css/gradient.css" />
+	<link rel="stylesheet" href="css/gradient.css" />
 	
 	<!--
 		Template New-Skin
@@ -37,22 +38,14 @@
 	<link rel="stylesheet" href="css/new-skin/new-skin.css" />
 
 	<!--
-		Template RTL
-	-->
-	<!--<link rel="stylesheet" href="css/rtl.css" />-->
-	
-	<!--
 		Template Colors
 	-->
-	<!--<link rel="stylesheet" href="css/template-colors/green.css" />-->
-	<link rel="stylesheet" href="css/template-colors/blue.css" />
-	<!--<link rel="stylesheet" href="css/template-colors/orange.css" />-->
-	<!--<link rel="stylesheet" href="css/template-colors/pink.css" />-->
-	<!--<link rel="stylesheet" href="css/template-colors/purple.css" />-->
-	<!--<link rel="stylesheet" href="css/template-colors/red.css" />-->
+	<link rel="stylesheet" href="css/demos/demo-2-colors.css" />
+
 	<!--
 		Template Dark
 	-->
+	<link rel="stylesheet" href="css/new-skin/classic-skin.css" />
 	<link rel="stylesheet" href="css/template-dark/dark.css" />
 	
 
@@ -66,7 +59,6 @@
 	-->
 	<link rel="shortcut icon" href="images/favicons/favicon.ico">
 	<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
-	
 </head>
 
 <body>
@@ -85,19 +77,52 @@
 		</div>
 
 		<!-- background -->
-		<div class="background"></div>
+		<div class="background gradient">
+			<ul class="bg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+		</div>
 
 		<!--
 			Container
 		-->
-		<div class="container opened" data-animation-in="fadeInUp" data-animation-out="fadeOutLeft">
+		<div class="container opened" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
 
 			<!--
 				Header
 			-->
 			<header class="header">
 
-				<!-- menu! -->
+				<!-- header profile -->
+				<div class="profile">						
+					<div class="image">
+						<a href="#">
+							<img src="images/profile.png" alt="Ueslei Adriano Sutil">
+						</a>
+					</div>
+					<div class="title">Ueslei Adriano Sutil</div>
+					<div class="subtitle subtitle-typed">
+						<div class="typing-title">
+							<p>Physical Oceanographer</p>
+							<p>Python Enthusiast</p>
+							<p>Freelancer</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- menu btn -->
+				<a href="#" class="menu-btn"><span></span></a>
+
+				<!-- menu -->
 				<div class="top-menu">
 					<ul>
 						<li class="active">
@@ -155,27 +180,33 @@
 
 					<!-- profile titles -->
 					<div class="title">Ueslei Adriano Sutil</div>
-					<div class="subtitle">Oceanographer</div>
+					<!--<div class="subtitle">Web Designer</div>-->
+					<div class="subtitle subtitle-typed">
+						<div class="typing-title">
+							<p>Physical Oceanographer</p>
+							<p>Python Enthusiast</p>
+							<p>Freelancer</p>
+						</div>
+					</div>
 
 					<!-- profile socials -->
 					<div class="social">
-						<a target="_blank" href="https://www.linkedin.com/in/usutil/"><span class="fab fa-linkedin"></span></a>
-						<a target="_blank" href="https://github.com/uesleisutil"><span class="fab fa-github"></span></a>
+						<a target="_blank" href="https://www.linkedin.com/in/usutil/"><span class="fa fa-linkedin"></span></a>
+						<a target="_blank" href="https://github.com/uesleisutil"><span class="fa fa-github"></span></a>
 						<a target="_blank" href="https://www.researchgate.net/profile/Ueslei_Sutil"><span class="ai ai-researchgate"></span></a>
 						<a target="_blank" href="http://lattes.cnpq.br/7449952079999911"><span class="ai ai-lattes"></span></a>
 						<a target="_blank" href="https://orcid.org/0000-0002-7150-536X"><span class="ai ai-orcid"></span></a>
-
+						<a target="_blank" href="https://www.instagram.com/ueslei.sutil/"><span class="fa fa-instagram"></span></a>
+						<a target="_blank" href="https://www.spotify.com/"><span class="fa fa-spotify"></span></a>
 					</div>
 					
 					<!-- profile buttons -->
 					<div class="lnks">
-						<a href="files/UesleiCV.pdf" class="lnk" download>
+						<a href="files/UesleiCV.pdf" class="lnk">
 							<span class="text">Download CV</span>
-							<span class="ion ion-archive"></span>
 						</a>
 						<a href="#" class="lnk discover">
 							<span class="text">Contact Me</span>
-							<span class="arrow"></span>
 						</a>
 					</div>
 
@@ -201,11 +232,10 @@
 						<div class="row">
 							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
 								<div class="text-box">
-									<p>
-										<i class="fa fa-quote-left"></i>    
-											I am a physical oceanographer currently working at the National Institute for Space Research. I work on
-											projects related to air-ocean-sea ice interaction using computational mathematics and numerical modeling to
-											answer scientific questions and analysing it's data using Python and NCAR Command Language (NCL).
+									<p>	<i class="fa fa-quote-left"></i>    
+										 I am a physical oceanographer currently working at the National Institute for Space Research. I work on
+										projects related to air-ocean-sea ice interaction using computational mathematics and numerical modeling to
+										answer scientific questions and analysing its data using Python, NCL, Fortran and MATLAB.
 										<i class="fa fa-quote-right"></i>
 									</p>
 								</div>
@@ -213,10 +243,10 @@
 							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
 								<div class="info-list">
 									<ul>
-										<li><strong>Age</strong> 29</li>
-										<li><strong>Residence</strong> Brazil</li>
-										<li><strong>Freelance</strong> Available</li>
-										<li><strong>Address</strong> São José dos Campos, Brazil</li>
+										<li><strong>Age . . . . . . . . . . . .</strong> 29</li>
+										<li><strong>Residence . . . . .</strong> Brazil</li>
+										<li><strong>Freelance . . . . .</strong> Available</li>
+										<li><strong>Address . . . . . . .</strong> São Paulo, BR</li>
 									</ul>
 								</div>
 							</div>
@@ -307,7 +337,6 @@
 					</div>
 				</div>
 			</div>
-
 			<!--
 				Card - Resume
 			-->
@@ -549,7 +578,6 @@
 
 				</div>
 			</div>
-
 			<!--
 				Card - Works
 			-->
@@ -796,38 +824,52 @@
 			<div class="card-inner blog" id="blog-card">
 				<div class="card-wrap">
 
-					<!--
-						Blog
-					-->
+					<!-- Blog -->
 					<div class="content blog">
 
 						<!-- title -->
-						<div class="title">Latest Posts</div>
+						<div class="title">
+							<span >Blog</span>
+						</div>
 
 						<!-- content -->
 						<div class="row border-line-v">
-
 							<!-- blog item -->
-							<div class="col col-d-12 col-t-12 col-m-12 border-line-h">
+							<div class="col col-d-6 col-t-6 col-m-12">
 								<div class="box-item">
 									<div class="image">
-										<a href="graph-plotting-w-python-matplotlib.html">
-											<img src="images/blog/xy_graph_csv.png" alt="" />
+										<a href="blog-post-01.html">
+											<img src="images/blog/xy_graph_csv.png" alt="Plotting a line graph in Python using Matplotlib">
 											<span class="info">
 												<span class="ion ion-document-text"></span>
 											</span>
-											<span class="date"><strong>12</strong>Jun 2020</span>
 										</a>
 									</div>
 									<div class="desc">
-										<a href="graph-plotting-w-python-matplotlib.html" class="name">Plotting a line graph in Python using Matplotlib</a>
-										<div class="category">Python</div>
+										<a href="blog-post-01.html">
+											<span class="date">June 12, 2020</span>
+										</a>
+										<a href="blog-post-01.html" class="name">Plotting a line graph in Python using Matplotlib</a>
+										<div class="text">
+											<p>How to create a beautifull graph using matplotlib.</p>
+										</div>
 									</div>
 								</div>
 							</div>
-
+							<!-- blog item -->
+						<!--page navigation 
 							<div class="clear"></div>
 						</div>
+
+						<div class="pager">
+							<nav class="navigation pagination">
+								<div class="nav-links">
+									<span class="page-numbers current">1</span>
+									<a class="page-numbers" href="#">2</a>
+									<a class="next page-numbers" href="#">Next</a>
+								</div>
+							</nav> -->
+						</div> 
 
 					</div>
 
@@ -903,6 +945,47 @@
 
 		</div>
 	</div>
+
+
+		<div class="s_overlay"></div>
+		<div class="content-sidebar">
+			<div class="sidebar-wrap search-form">
+				<aside id="secondary" class="widget-area">
+					<section id="search-2" class="widget widget_search">
+						<label>
+							<span class="screen-reader-text">Search for:</span>
+							<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+						</label>
+						<input type="submit" class="search-submit" value="Search">
+					</section>
+					<section class="widget widget_recent_entries">
+						<h2 class="widget-title">
+							<span class="widget-title-span"><span class="first-word">Recent</span> Posts</span>
+						</h2>
+						<ul>
+							<li>
+								<a href="blog-post-01.html">Plotting a line graph in Python using Matplotlib</a>
+							</li>
+						</ul>
+					</section>
+						<section class="widget widget_archive">
+						<h2 class="widget-title">
+							<span class="widget-title-span">
+								<span class="first-letter">Archives</span>
+							</span>
+						</h2>
+						<ul>
+							<li>
+								<a href="blog-post-01.html">June 2020</a>
+							</li>
+						</ul>
+					</section>
+				</aside>
+			</div>
+			<span class="close"></span>
+		</div>
+
+	</div>
 	
 	<!--
 		jQuery Scripts
@@ -914,15 +997,14 @@
 	<script src="js/isotope.pkgd.js"></script>
 	<script src="js/jquery.slimscroll.js"></script>
 	<script src="js/owl.carousel.js"></script>
-	
-		<!--
-		Google map api
-	-->
+	<script src="js/typed.js"></script>
+	<script src="https://use.fontawesome.com/8da76d029b.js"></script>
 	
 	<!--
 		Google map api
 	-->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYdXGpVXMiIyfhuUZW1qmWD01jB1X8GsE"></script>
+	
 	
 	<!--
 		Main Scripts

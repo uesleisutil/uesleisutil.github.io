@@ -25,6 +25,79 @@ $(function () {
 	
 	var width = $(window).width();
 	var height = $(window).height();
+
+
+	/*
+		Typed
+	*/
+
+	$('.subtitle.subtitle-typed').each(function(){
+		var subtitleContainer = $(this);
+
+		subtitleContainer.typed({
+			stringsElement: subtitleContainer.find('.typing-title'),
+			backDelay: 3500, /* Delay in text change */
+			typeSpeed: 0, /* Typing speed */
+			loop: true
+		});
+	});
+
+
+	/*
+		Sidebar Show/Hide
+	*/
+
+	$('header, .profile').on('click', '.menu-btn', function(){
+		$('.s_overlay').fadeIn();
+		$('.content-sidebar').addClass('active');
+		$('body,html').addClass('sidebar-open');
+		return false;
+	});
+	$('.content-sidebar, .container').on('click', '.close, .s_overlay', function(){
+		$('.s_overlay').fadeOut();
+		$('.content-sidebar').removeClass('active');
+		$('body,html').removeClass('sidebar-open');
+	});
+
+
+	/*
+		Popup Menu Navigation
+	*/
+	
+	$('.main-menu li.page_item_has_children').each(function(){
+		$(this).find('> a').after('<span class="children_toggle"></span>');
+	});
+	$('.main-menu').on('click', '.children_toggle', function(){
+		var main_menu_item = $(this).closest('.page_item_has_children');
+		if(main_menu_item.hasClass('open')) {
+			main_menu_item.removeClass('open');
+			main_menu_item.find('> ul').slideUp(250);
+		} else {
+			main_menu_item.addClass('open');
+			main_menu_item.find('> ul').slideDown(250);
+		}
+	});
+
+
+	/*
+		Default Menu
+	*/
+
+	$('.lnk-view-menu').on('click', function(){
+		var btn_text1 = $(this).find('.text').text();
+		var btn_text2 = $(this).find('.text').data('text-open');
+		if($('.profile').hasClass('default-menu-open')){
+			$('.profile').removeClass('default-menu-open');
+			$(this).find('.text').data('text-open', btn_text1);
+			$(this).find('.text').text(btn_text2);
+		} else {
+			$('.profile').addClass('default-menu-open');
+			$(this).find('.text').data('text-open', btn_text1);
+			$(this).find('.text').text(btn_text2);
+		}
+
+		return false;
+	});
 	
 	
 	/*
@@ -467,7 +540,7 @@ $(function () {
 */
 
 function initMap() {
-	var myLatlng = new google.maps.LatLng(-23.207163,-45.860631); // <- Your latitude and longitude
+	var myLatlng = new google.maps.LatLng(40.773328,-73.960088); // <- Your latitude and longitude
 	var styles = [
 	{
 		"featureType": "water",
@@ -489,7 +562,7 @@ function initMap() {
 		zoom: 14,
 		center: myLatlng,
 		mapTypeControl: false,
-		disableDefaultUI: false,
+		disableDefaultUI: true,
 		zoomControl: true,
 		scrollwheel: false,
 		styles: styles
