@@ -21,8 +21,8 @@
 	1. Header
 */
 .share-btn > a {
-    border: 1px solid #ccc;
-    padding: 5px;
+    border: 0px solid #ccc;
+    padding: 15px;
     font-size: 12px;
     font-family: Verdana, Arial;
 }
