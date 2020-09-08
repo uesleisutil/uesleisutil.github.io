@@ -15,7 +15,6 @@
 	-->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css">	
-	<link rel="stylesheet" href="dist/css/social-sharing.css">
 	<!--
 		Load CSS
 	-->
@@ -534,13 +533,12 @@ fig.savefig('xy_graph_csv.png',transparent=False,
 
 
 									<div class="post-text-bottom">	
-										<div class="social-share">
-											<span>Share</span>
-											<a class="btn-facebook" href="https://www.uesleisutil.com.br/graph-plotting-w-python-matplotlib.html">Facebook</a>
-											<a class="share-btn share-btn-twitter" title="Share on Twitter"><i class="ion ion-social-twitter"></i></a>
-											<a class="share-btn share-btn-linkedin" title="Share on Linkedin"><i class="ion ion-social-linkedin"></i></a>
-											<a class="share-btn share-btn-reddit" title="Share on Reddit"><i class="ion ion-social-reddit"></i></a>
-											<a class="share-btn share-btn-pinterest" title="Share on Pinterest"><i class="ion ion-social-pinterest"></i></a>
+										<div class="share-btn" data-url="https://www.uesleisutil.com.br/graph-plotting-w-python-matplotlib.html" data-title="Plotting a line graph in Python using Matplotlib" data-desc="How to create a beautifull graph using matplotlib">
+											<a class="btn-vk" data-id="vk"><i class="fab fa-vk"></i> VK</a>
+											<a class="btn-facebook" data-id="fb"><i class="fab fa-facebook-square"></i> Facebook</a>
+											<a class="btn-twitter" data-id="tw"><i class="fab fa-twitter"></i> Twitter</a>
+											<a class="btn-telegram" data-id="tg"><i class="fab fa-telegram"></i> Telegram</a>
+											<a class="btn-mail" data-id="mail"><i class="fas fa-at"></i> EMail</a>
 										</div>
 										<span class="tags-links">Taggs: <a href="#">code</a><a href="#">python</a><a href="#">matplotlib</a></span>
 									</div>
@@ -674,6 +672,7 @@ fig.savefig('xy_graph_csv.png',transparent=False,
 	<script src="https://use.fontawesome.com/8da76d029b.js"></script>
 	<script src="js/prism.js"></script>
 	<script src="js/prism-normalize-whitespace.js"></script>
+	<script src="share-buttons/dist/share-buttons.js"></script>
 	<script type="text/javascript">
 		// Optional
 		Prism.plugins.NormalizeWhitespace.setDefaults({
