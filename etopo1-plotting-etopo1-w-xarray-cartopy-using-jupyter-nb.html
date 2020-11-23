@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!--
+		Basic
+	-->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<title>Plotting a line graph in Python using Matplotlib</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="description" content="How to create a beautifull graph using matplotlib." />
+	<!--
+		Load Fonts
+	-->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css">	
+	<!--
+		Load CSS
+	-->
+	<link rel="stylesheet" href="css/basic.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="css/blogs.css" />
+	<link rel="stylesheet" href="css/ionicons.css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/owl.carousel.css" />
+	<link rel="stylesheet" href="css/prism.css"/>
+	<!--
+		Background Gradient
+	-->
+	<link rel="stylesheet" href="css/gradient.css" />
+	
+	<!--
+		Template New-Skin
+	-->
+	<link rel="stylesheet" href="css/new-skin/new-skin.css" />
+
+	<!--
+		Template RTL
+	-->
+	<!--<link rel="stylesheet" href="css/rtl.css" />-->
+	
+	<!--
+		Template Colors
+	-->
+	<link rel="stylesheet" href="css/demos/demo-2-colors.css" />
+	<!--<link rel="stylesheet" href="css/template-colors/blue.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/orange.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/pink.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/purple.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/red.css" />-->
+
+	<!--
+		Template Dark
+	-->
+	<link rel="stylesheet" href="css/new-skin/classic-skin.css" />
+	<link rel="stylesheet" href="css/template-dark/dark.css" />
+	
+
+	<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!--
+		Favicons
+	-->
+	<link rel="shortcut icon" href="images/favicons/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+	
+</head>
+
+<body>
+	<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v6.0&appId=703097563841075&autoLogAppEvents=1"></script>
+	<div class="page new-skin">
+		<div id="fb-root"></div>
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v6.0&appId=703097563841075&autoLogAppEvents=1"></script>
+		
+	<div class="page new-skin">
+		
+		<!-- preloader -->
+		<div class="preloader">
+			<div class="centrize full-width">
+				<div class="vertical-center">
+					<div class="spinner">
+						<div class="double-bounce1"></div>
+						<div class="double-bounce2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- background -->
+		<div class="background gradient">
+			<ul class="bg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+		</div>
+
+		<!--
+			Container
+		-->
+		<div class="container opened" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
+
+			<!--
+				Header
+			-->
+			<header class="header">
+
+				<!-- header profile -->
+				<div class="profile">						
+					<div class="image">
+						<a href="#">
+							<img src="images/profile.png" alt="Ueslei Adriano Sutil">
+						</a>
+					</div>
+					<div class="title">Ueslei Adriano Sutil</div>
+					<div class="subtitle subtitle-typed">
+						<div class="typing-title">
+							<p>Physical Oceanographer</p>
+							<p>Programmer</p>
+							<p>Arduino Enthusiast</p>
+							<p>Freelancer</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- menu btn -->
+				<a href="#" class="menu-btn"><span></span></a>
+
+				<!-- menu -->
+				<div class="top-menu">
+					<ul>
+						<li>
+							<a href="index.html">
+								<span class="icon ion-home"></span>
+								<span class="link">Home</span>
+							</a>
+						</li>
+						<li>
+							<a href="#contacts-card">
+								<span class="icon ion-at"></span>
+								<span class="link">Contact</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</header>
+
+			<!--
+				Card - Started
+			-->
+			<div class="card-started" id="home-card">
+
+				<!--
+					Profile
+				-->
+				<div class="profile">
+
+					<!-- profile image -->
+					<div class="slide" style="background-image: url(images/bg.jpg);"></div>
+
+					<!-- profile photo -->
+					<div class="image">
+						<img src="images/profile.png" alt="" />
+					</div>
+
+					<!-- profile titles -->
+					<div class="title">Ueslei Adriano Sutil</div>
+					<!--<div class="subtitle">Web Designer</div>-->
+					<div class="subtitle subtitle-typed">
+						<div class="typing-title">
+							<p>Physical Oceanographer</p>
+							<p>Python Enthusiast</p>
+							<p>Freelancer</p>
+						</div>
+					</div>
+
+					<!-- profile socials -->
+					<div class="social">
+						<a target="_blank" href="https://www.linkedin.com/in/usutil/"><span class="fa fa-linkedin"></span></a>
+						<a target="_blank" href="https://github.com/uesleisutil"><span class="fa fa-github"></span></a>
+						<a target="_blank" href="https://www.researchgate.net/profile/Ueslei_Sutil"><span class="ai ai-researchgate"></span></a>
+						<a target="_blank" href="http://lattes.cnpq.br/7449952079999911"><span class="ai ai-lattes"></span></a>
+						<a target="_blank" href="https://orcid.org/0000-0002-7150-536X"><span class="ai ai-orcid"></span></a>
+						<a target="_blank" href="https://www.instagram.com/ueslei.sutil/"><span class="fa fa-instagram"></span></a>
+						<a target="_blank" href="https://open.spotify.com/user/224n43zavbh7dkwade6aw54sq"><span class="fa fa-spotify"></span></a>
+					</div>
+					
+					<!-- profile buttons -->
+					<div class="lnks">
+						<a href="files/UesleiCV.pdf" class="lnk">
+							<span class="text">Download CV</span>
+						</a>
+						<a href="index.html" class="lnk discover active">
+							<span class="text">Back to home</span>
+							<span class="arrow"></span>
+						</a>
+					</div>
+
+				</div>
+
+			</div>
+			
+			<!--
+				Card - Blog
+			-->
+			<div class="card-inner blog blog-post animated" id="blog-card">
+				<div class="card-wrap">
+
+					<!--
+						Blog Single
+					-->
+					<div class="content blog-single">
+
+						<!-- title -->
+						<div class="title">Blog Post</div>
+
+						<!-- content -->
+						<div class="row border-line-v">
+							<div class="col col-m-12 col-t-12 col-d-12">
+								<div class="post-box">
+									
+									<!-- blog detail -->
+									<h1>Plotting a line graph in Python using Matplotlib</h1>						
+									<div class="blog-detail">Posted 12 Jun 2020</div>
+									
+									<!-- blog image -->
+									<div class="blog-image">
+										<img src="images/blog/xy_graph_csv.png" alt="" />
+									</div>  
+									
+									<!-- blog content -->
+									<div class="blog-content", align="justify">
+										<p>
+											Without a doubt, Python is one of the most famous programming language for data science, 
+											but creating a script from scratch for data visualization can be tricky.
+											In this article I will guide you to create a simple line graph. 
+										</p>
+										<p>
+											Although nowadays there is plenty of options for data visualization in Python, 
+											such as <b>Seaborn</b>, <b>Plotly</b> and <b>Bokeh</b>, in this article I will 
+											write about the oldest and most famous Python's data visualization library,
+											<b>Matplotlib</b>. 
+										</p>
+										<p>
+											<b>Matplotlib</b> is a library used for creating static, animated, and interactive 
+											visualizations, but despite being widely used, getting a plot to look right can
+											be pretty time consuming. 
+										</p>
+										<p>
+											
+											So, this article is a beginner-to-intermediate-level walkthrough on Matplotlib coding
+											and requires a previous understanding in programming language.
+										</p>
+										<p>
+											Using the database from the the brazilian <a href="http://www.inmet.gov.br">
+											<b>National Institute of Meteorology</b></a>, I created a comma-separated CSV file
+											from a weather station located in the city of Blumenau, where 
+											an extreme precipitation event occured in november 2008.
+											You can download the file <a href="https://gist.github.com/uesleisutil/2bd4dce332c7be378a374b0bc2d9fba4"><b>here</b></a>.
+										</p>
+										<p>
+											The file consists of three collums: the first one is the year, the second is the total precipitation 
+											for november and the last one is the daily maximum precipitation in november. 
+										</p>
+										<p>
+											First, if you do not have Python installed in your computer, I suggest to download and 
+											install Anaconda, a Python open-source distribution that you can use to perform Python 
+											data science, install libraries and manage environments. Download Anaconda 
+											<b><a href="https://www.anaconda.com/products/individual">here</a></b>.
+										</p>
+										<p><iframe><iframe src="plot_etopo1.html"></iframe>
+										</iframe></p>
+
+									</div>
+
+
+									<div class="post-text-bottom">	
+										<span>Share:</span>
+										<div class="share-btn" data-url="https://www.uesleisutil.com.br/graph-plotting-w-python-matplotlib.html" data-title="Plotting a line graph in Python using Matplotlib" data-desc="How to create a beautifull graph using matplotlib">
+											<a class="btn-facebook" data-id="fb" title="Share on Facebook"><i class="fab fa-facebook-square"></i></a>
+											<a class="btn-twitter" data-id="tw" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+											<a class="btn-linkedin" data-id="in" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+																					
+											<a class="btn-telegram" data-id="tg" title="Share on Telegram"><i class="fab fa-telegram"></i></a>
+											<a class="btn-whatsapp" data-id="wa" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>											
+											<a class="btn-mail" data-id="mail" title="Share on Email"><i class="fas fa-at"></i></a>
+										</div>
+										<span class="tags-links">Tags: <a href="#">code</a><a href="#">python</a><a href="#">matplotlib</a></span>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<nav class="navigation post-navigation">
+							<div class="nav-links">
+								<div class="nav-previous"><a href="#"><span class="post-nav-next post-nav-text">Prev</span></a></div>
+								<div class="nav-next"><a href="#"><span class="post-nav-prev post-nav-text">Next</span></a></div>
+							</div>
+						</nav>
+						<div class="title">Comments</div>
+						<div class="fb-comments" data-href="https://www.uesleisutil.com.br/graph-plotting-w-python-matplotlib.html" data-mobile="Auto-detected" colorscheme="Dark" data-numposts="5" data-width="450"></div>
+						
+					</div>
+
+				</div>
+			</div>
+
+			<!--
+				Card - Contacts
+			-->
+			<div class="card-inner contacts" id="contacts-card">
+				<div class="card-wrap">
+
+					<!--
+						Conacts Info
+					-->
+
+					<div class="content contacts">
+
+						<!-- title -->
+						<div class="title">Get in Touch</div>
+
+						<!-- content -->
+						<div class="row">
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="map" id="map"></div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+
+					<div class="content contacts">
+
+						<!-- title -->
+						<div class="title">Contact Form</div>
+
+						<!-- content -->
+						<div class="row">
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="contact_form">
+									<form
+										action="https://formspree.io/xpvpnoax"
+										method="POST"
+										>
+										<label>
+											Your name:
+											<input type="text" name="name">
+										</label>
+										<label>
+											Your email:
+											<input type="text" name="_replyto">
+										</label>
+										<label>
+											Your message:
+											<textarea name="message"></textarea>
+										</label>
+
+										<!-- your other form fields go here -->
+
+										<button type="submit">Send</button>
+										</form>
+
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="s_overlay"></div>
+		<div class="content-sidebar">
+			<div class="sidebar-wrap search-form">
+				<aside id="secondary" class="widget-area">
+					<section id="search-2" class="widget widget_search">
+						<label>
+							<span class="screen-reader-text">Search for:</span>
+							<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+						</label>
+						<input type="submit" class="search-submit" value="Search">
+					</section>
+					<section class="widget widget_recent_entries">
+						<h2 class="widget-title">
+							<span class="widget-title-span"><span class="first-word">Recent</span> Posts</span>
+						</h2>
+						<ul>
+							<li>
+								<a href="graph-plotting-w-python-matplotlib.html">Plotting a line graph in Python using Matplotlib</a>
+							</li>
+						</ul>
+					</section>
+				</aside>
+			</div>
+			<span class="close"></span>
+		</div>
+
+	</div>
+	
+	<!--
+		jQuery Scripts
+	-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.validate.js"></script>
+	<script src="js/jquery.magnific-popup.js"></script>
+	<script src="js/imagesloaded.pkgd.js"></script>
+	<script src="js/isotope.pkgd.js"></script>
+	<script src="js/jquery.slimscroll.js"></script>
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/typed.js"></script>
+	<script src="https://use.fontawesome.com/8da76d029b.js"></script>
+	<script src="js/prism.js"></script>
+	<script src="js/prism-normalize-whitespace.js"></script>
+	<script src="share-buttons/dist/share-buttons.js"></script>
+	<script type="text/javascript">
+		// Optional
+		Prism.plugins.NormalizeWhitespace.setDefaults({
+			'remove-trailing': true,
+			'remove-indent': true,
+			'left-trim': true,
+			'right-trim': true,
+		});
+		</script>	
+	<!--
+		Google map api
+	-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYdXGpVXMiIyfhuUZW1qmWD01jB1X8GsE"></script>
+	<!--
+		Main Scripts
+	-->
+	<script src="js/scripts.js"></script>
+	
+</body>
+</html>
