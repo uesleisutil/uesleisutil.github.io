@@ -239,50 +239,42 @@
 									
 									<!-- blog image -->
 									<div class="blog-image">
-										<img src="images/blog/xy_graph_csv.png" alt="" />
+										<img src="images/blog/etopo1.png" class="centerimage" style="max-width:75%"alt="" />
 									</div>  
 									
 									<!-- blog content -->
 									<div class="blog-content", align="justify">
-										<p>
-											Without a doubt, Python is one of the most famous programming language for data science, 
-											but creating a script from scratch for data visualization can be tricky.
-											In this article I will guide you to create a simple line graph. 
+
+										<p>In this post we will learn how to easily plot topography and bathymetry using Cartopy to plot the data into a figure. 
+										   Although still widely used by many programmers, basemap is deprecated since 2017 and with the discontinuation of Python 2.7 itself, Cartopy 
+										   is becoming the main tool for base mapping with matplotlib, but you should be aware of a few shortcomings when working with
+										   (e.g. can’t use latitude/longitude labels for many map projections). If you run in to these issues, basemap is likely to accomplish what you need.
 										</p>
 										<p>
-											Although nowadays there is plenty of options for data visualization in Python, 
-											such as <b>Seaborn</b>, <b>Plotly</b> and <b>Bokeh</b>, in this article I will 
-											write about the oldest and most famous Python's data visualization library,
-											<b>Matplotlib</b>. 
+											<a ref="https://rda.ucar.edu/datasets/ds759.4/docs/ETOPO1.pdf">ETOPO1</a> is a 1 arc-minute global relief model of Earth's surface that 
+											integrates land topography and ocean bathymetry. Its data can be easily downloaded from the NCAR's <a href="https://rda.ucar.edu/datasets/ds759.4/">
+											Research Data Archive</a>. Alternatively, I uploaded into a Github <a href="https://github.com/uesleisutil/Stommel/blob/master/etopo1.nc">repository</a> 
+											the ETOPO1 data that I used in this post.
+										
 										</p>
 										<p>
-											<b>Matplotlib</b> is a library used for creating static, animated, and interactive 
-											visualizations, but despite being widely used, getting a plot to look right can
-											be pretty time consuming. 
+											In order to make more easily to learn, this scripts was made using Jupyter Notebook. Also, this script shows how to highlight a specific topography 
+											(300 and 500 meters) and bathymetry (200 and 1000 meters) and to plot a marker and add a text showing a location (Blumenau) in the map.
 										</p>
 										<p>
+											A few libraries are needed to run this script. Click on each one below to get the code to install them:
+											<ul class="list-style">
+												<li><a href="https://anaconda.org/anaconda/numpy">Numpy</a></li>
+												<li><a href="https://anaconda.org/anaconda/scipy">Scipy</a></li>
+												<li><a href="https://anaconda.org/anaconda/xarray">Xarray</a></li>
+												<li><a href="https://anaconda.org/conda-forge/cmocean">Cmocean</a></li>
+												<li><a href="https://anaconda.org/conda-forge/cartopy">Cartopy</a></li>
+												<li><a href="https://anaconda.org/conda-forge/matplotlib">Matplotlib</a></li>
+											</ul>
+										</p>
 											
-											So, this article is a beginner-to-intermediate-level walkthrough on Matplotlib coding
-											and requires a previous understanding in programming language.
-										</p>
-										<p>
-											Using the database from the the brazilian <a href="http://www.inmet.gov.br">
-											<b>National Institute of Meteorology</b></a>, I created a comma-separated CSV file
-											from a weather station located in the city of Blumenau, where 
-											an extreme precipitation event occured in november 2008.
-											You can download the file <a href="https://gist.github.com/uesleisutil/2bd4dce332c7be378a374b0bc2d9fba4"><b>here</b></a>.
-										</p>
-										<p>
-											The file consists of three collums: the first one is the year, the second is the total precipitation 
-											for november and the last one is the daily maximum precipitation in november. 
-										</p>
-										<p>
-											First, if you do not have Python installed in your computer, I suggest to download and 
-											install Anaconda, a Python open-source distribution that you can use to perform Python 
-											data science, install libraries and manage environments. Download Anaconda 
-											<b><a href="https://www.anaconda.com/products/individual">here</a></b>.
-										</p>
-										<p><iframe src="https://www.uesleisutil.com.br/plot_etopo1.html" width="650" height="450" ></iframe>
+
+										<p><iframe src="https://www.uesleisutil.com.br/plot_etopo1.html" width="1000" height="1000" ></iframe>
 										</iframe></p>
 
 									</div>
